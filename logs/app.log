@@ -43,3 +43,14 @@
 2026-04-05 20:47:57,821 - INFO - Prediction result: Office Supplies
 2026-04-05 20:47:57,821 - INFO - Prediction: Office Supplies, confidence=0.5638878704927104, model=v20260405204749
 2026-04-05 20:47:58,400 - INFO - Processing completed. Total processed: 1
+2026-04-06 01:41:43,158 - INFO - Loaded 5005 records for training
+2026-04-06 01:41:43,271 - INFO - Model trained with accuracy: 0.952063914780293
+2026-04-06 01:41:43,280 - INFO - Model saved: v20260406014143
+2026-04-06 01:41:43,713 - INFO - Training completed successfully
+2026-04-06 01:41:57,098 - INFO - Started processing expenses
+2026-04-06 01:41:57,495 - INFO - Found 1 unprocessed expenses
+2026-04-06 01:41:57,495 - INFO - Processing expense_id=5006, desc=medical expense
+2026-04-06 01:41:59,561 - INFO - Prediction request received: medical expense
+2026-04-06 01:41:59,562 - INFO - Prediction result: Office Supplies
+2026-04-06 01:41:59,563 - INFO - Prediction: Office Supplies, confidence=0.2652189779501851, model=v20260406014143
+2026-04-06 01:42:00,259 - INFO - Processing completed. Total processed: 1

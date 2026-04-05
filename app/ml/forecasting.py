@@ -66,7 +66,7 @@ def generate_forecast(dept_id: int, periods: int = 6):
     df.set_index("month", inplace=True)
 
     # ensure continuous monthly timeline
-    df = df.resample("M").sum().fillna(0)
+    df = df.resample("ME").sum().fillna(0)
 
     # -----------------------------
     # 2. Train ARIMA model
@@ -79,7 +79,7 @@ def generate_forecast(dept_id: int, periods: int = 6):
     forecast_index = pd.date_range(
         start=df.index[-1] + pd.offsets.MonthEnd(),
         periods=periods,
-        freq="M"
+        freq="ME"
     )
 
     forecast_df = pd.DataFrame({
