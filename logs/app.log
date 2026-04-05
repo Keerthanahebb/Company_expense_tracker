@@ -1,0 +1,45 @@
+2026-04-05 20:37:50,947 - INFO - Loaded 5001 records for training
+2026-04-05 20:37:51,112 - INFO - Model trained with accuracy: 0.9526982011992006
+2026-04-05 20:37:51,129 - INFO - Model saved: v20260405203751
+2026-04-05 20:37:51,768 - INFO - Training completed successfully
+2026-04-05 20:38:21,971 - INFO - Loaded 5001 records for training
+2026-04-05 20:38:22,119 - INFO - Model trained with accuracy: 0.9526982011992006
+2026-04-05 20:38:22,132 - INFO - Model saved: v20260405203822
+2026-04-05 20:38:22,688 - INFO - Training completed successfully
+2026-04-05 20:44:45,367 - INFO - Loaded 5001 records for training
+2026-04-05 20:44:45,496 - INFO - Model trained with accuracy: 0.9526982011992006
+2026-04-05 20:44:45,508 - INFO - Model saved: v20260405204445
+2026-04-05 20:44:46,036 - INFO - Training completed successfully
+2026-04-05 20:44:50,372 - INFO - Started processing expenses
+2026-04-05 20:44:50,696 - INFO - Found 2 unprocessed expenses
+2026-04-05 20:44:50,696 - INFO - Processing expense_id=5002, desc=cab expense
+2026-04-05 20:44:53,795 - INFO - Prediction request received: cab expense
+2026-04-05 20:44:53,801 - INFO - Prediction result: Travel
+2026-04-05 20:44:53,801 - INFO - Prediction: Travel, confidence=0.7595992412803579, model=v20260405204445
+2026-04-05 20:44:54,584 - INFO - Processing expense_id=5003, desc=cab expense
+2026-04-05 20:44:55,205 - INFO - Prediction request received: cab expense
+2026-04-05 20:44:55,205 - INFO - Prediction result: Travel
+2026-04-05 20:44:55,205 - INFO - Prediction: Travel, confidence=0.7595992412803579, model=v20260405204445
+2026-04-05 20:44:55,803 - INFO - Processing completed. Total processed: 2
+2026-04-05 20:45:53,581 - INFO - Loaded 5003 records for training
+2026-04-05 20:45:53,745 - INFO - Model trained with accuracy: 0.9433710859427049
+2026-04-05 20:45:53,767 - INFO - Model saved: v20260405204553
+2026-04-05 20:45:54,389 - INFO - Training completed successfully
+2026-04-05 20:46:06,757 - INFO - Started processing expenses
+2026-04-05 20:46:07,302 - INFO - Found 1 unprocessed expenses
+2026-04-05 20:46:07,302 - INFO - Processing expense_id=5004, desc=auto expense
+2026-04-05 20:46:07,950 - INFO - Prediction request received: auto expense
+2026-04-05 20:46:07,950 - INFO - Prediction result: Office Supplies
+2026-04-05 20:46:07,953 - INFO - Prediction: Office Supplies, confidence=0.24706648722653915, model=v20260405204553
+2026-04-05 20:46:08,514 - INFO - Processing completed. Total processed: 1
+2026-04-05 20:47:48,975 - INFO - Loaded 5004 records for training
+2026-04-05 20:47:49,101 - INFO - Model trained with accuracy: 0.948069241011984
+2026-04-05 20:47:49,123 - INFO - Model saved: v20260405204749
+2026-04-05 20:47:49,791 - INFO - Training completed successfully
+2026-04-05 20:47:56,796 - INFO - Started processing expenses
+2026-04-05 20:47:57,165 - INFO - Found 1 unprocessed expenses
+2026-04-05 20:47:57,165 - INFO - Processing expense_id=5005, desc=office get togethr
+2026-04-05 20:47:57,819 - INFO - Prediction request received: office get togethr
+2026-04-05 20:47:57,821 - INFO - Prediction result: Office Supplies
+2026-04-05 20:47:57,821 - INFO - Prediction: Office Supplies, confidence=0.5638878704927104, model=v20260405204749
+2026-04-05 20:47:58,400 - INFO - Processing completed. Total processed: 1

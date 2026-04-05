@@ -2,6 +2,7 @@ import joblib
 from sqlalchemy import text
 from app.database import engine
 from app.ml.preprocessing import clean_text
+from app.ml.logger import logger
 
 
 def load_active_model():
@@ -31,11 +32,16 @@ def predict(description):
 
     model, vectorizer, version = load_active_model()
 
+    logger.info(f"Prediction request received: {description}")
     cleaned = clean_text(description)
+
+    # logger.info(f"Prediction request received: {desc}")
 
     X = vectorizer.transform([cleaned])
 
     prediction = model.predict(X)[0]
+
+    logger.info(f"Prediction result: {prediction}")
 
     confidence = float(max(model.predict_proba(X)[0]))
 

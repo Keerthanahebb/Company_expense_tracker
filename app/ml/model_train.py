@@ -9,6 +9,8 @@ from app.database import engine
 from app.ml.preprocessing import clean_text
 from sqlalchemy import text
 
+from app.ml.logger import logger
+
 MODEL_BASE = "models"
 
 def train_model():
@@ -20,6 +22,8 @@ def train_model():
         WHERE e.category_id IS NOT NULL
     """, engine)
 
+    logger.info(f"Loaded {len(df)} records for training")
+
     df["description"] = df["description"].apply(clean_text)
 
     X_train, X_test, y_train, y_test = train_test_split(
@@ -30,6 +34,12 @@ def train_model():
     )
 
     vectorizer = TfidfVectorizer(max_features=5000, ngram_range=(1,2))
+#     vectorizer = TfidfVectorizer(
+#     max_features=8000,
+#     ngram_range=(1,3),
+#     min_df=2,
+#     max_df=0.9
+# )
     X_train_vec = vectorizer.fit_transform(X_train)
     X_test_vec = vectorizer.transform(X_test)
 
@@ -38,12 +48,16 @@ def train_model():
 
     accuracy = model.score(X_test_vec, y_test)
 
+    logger.info(f"Model trained with accuracy: {accuracy}")
+
     version = f"v{datetime.now().strftime('%Y%m%d%H%M%S')}"
     path = os.path.join(MODEL_BASE, version)
     os.makedirs(path)
 
     joblib.dump(model, f"{path}/model.pkl")
     joblib.dump(vectorizer, f"{path}/vectorizer.pkl")
+
+    logger.info(f"Model saved: {version}")
 
     with engine.begin() as conn:
         conn.execute(text(
@@ -58,4 +72,6 @@ def train_model():
             "accuracy": accuracy
         })
 
+        logger.info("Training completed successfully")
+        
         return {"version": version, "accuracy": accuracy}
