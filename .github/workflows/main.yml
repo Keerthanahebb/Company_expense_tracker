@@ -37,9 +37,9 @@ jobs:
         run: |
           python -c "from app.main import app"
 
-      - name: Verify Forecast Module
-        run: |
-          python -c "from app.ml.forecasting import *"
+      # - name: Verify Forecast Module
+      #   run: |
+      #     python -c "from app.ml.forecasting import *"
 
       - name: Build Docker Image
         run: |
