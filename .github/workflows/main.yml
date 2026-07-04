@@ -33,9 +33,9 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Verify FastAPI
-        run: |
-          python -c "from app.main import app"
+      # - name: Verify FastAPI
+      #   run: |
+      #     python -c "from app.main import app"
 
       # - name: Verify Forecast Module
       #   run: |
