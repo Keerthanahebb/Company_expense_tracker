@@ -32,7 +32,8 @@
 import pandas as pd
 from statsmodels.tsa.arima.model import ARIMA
 from sqlalchemy import text
-from app.database import engine
+# from app.database import engine
+from app.database import get_engine
 
 
 def generate_forecast(dept_id: int, periods: int = 6):
@@ -56,7 +57,7 @@ def generate_forecast(dept_id: int, periods: int = 6):
         ORDER BY month
     """)
 
-    df = pd.read_sql(query, engine, params={"dept": dept_id})
+    df = pd.read_sql(query, get_engine(), params={"dept": dept_id})
 
     if df.empty or len(df) < 6:
         return {"error": "Not enough historical data to forecast"}
@@ -96,7 +97,7 @@ def generate_forecast(dept_id: int, periods: int = 6):
         WHERE dept_id = :dept
     """)
 
-    budget_df = pd.read_sql(budget_query, engine, params={"dept": dept_id})
+    budget_df = pd.read_sql(budget_query, get_engine(), params={"dept": dept_id})
 
     if budget_df.empty:
         return {"error": "Department budget not found"}

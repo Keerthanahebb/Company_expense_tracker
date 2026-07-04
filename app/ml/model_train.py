@@ -5,7 +5,7 @@ from datetime import datetime
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
-from app.database import engine
+from app.database import get_engine
 from app.ml.preprocessing import clean_text
 from sqlalchemy import text
 
@@ -20,7 +20,7 @@ def train_model():
         FROM expenses e
         JOIN expense_categories c ON e.category_id = c.category_id
         WHERE e.category_id IS NOT NULL
-    """, engine)
+    """, get_engine())
 
     logger.info(f"Loaded {len(df)} records for training")
 
@@ -59,7 +59,7 @@ def train_model():
 
     logger.info(f"Model saved: {version}")
 
-    with engine.begin() as conn:
+    with get_engine().begin() as conn:
         conn.execute(text(
         "UPDATE model_registry SET is_active = FALSE"
     ))

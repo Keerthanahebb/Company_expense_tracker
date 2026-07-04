@@ -1,13 +1,13 @@
 import joblib
 from sqlalchemy import text
-from app.database import engine
+from app.database import get_engine
 from app.ml.preprocessing import clean_text
 from app.ml.logger import logger
 
 
 def load_active_model():
 
-    with engine.connect() as conn:
+    with get_engine().connect() as conn:
 
         result = conn.execute(text("""
             SELECT version_name

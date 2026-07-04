@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from sqlalchemy import text
-from app.database import engine
+from app.database import get_engine
 
 router = APIRouter()
 
@@ -8,7 +8,7 @@ router = APIRouter()
 
 def add_expense(employee_id:int, description:str, amount:float):
 
-    with engine.begin() as conn:
+    with get_engine().begin() as conn:
 
         conn.execute(text("""
             INSERT INTO expenses
