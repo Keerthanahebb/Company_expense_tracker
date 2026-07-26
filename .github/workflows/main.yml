@@ -131,7 +131,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com
-            docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/expense-tracker:latest
-            docker stop expense-tracker || true
-            docker rm expense-tracker || true
-            docker run -d --name expense-tracker -p 80:8000 --env-file /home/ubuntu/.env ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/expense-tracker:latest
+            docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/exp-track:latest
+            docker stop exp-track || true
+            docker rm exp-track || true
+            docker run -d --name exp-track -p 80:8000 --env-file /home/ubuntu/.env ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/expense-tracker:latest
