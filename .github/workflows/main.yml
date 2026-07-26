@@ -134,4 +134,4 @@ jobs:
             docker pull ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/exp-track:latest
             docker stop exp-track || true
             docker rm exp-track || true
-            docker run -d --name exp-track -p 80:8000 --env-file /home/ubuntu/.env ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/expense-tracker:latest
+            docker run -d --name exp-track -p 80:8000 --env-file /home/ubuntu/.env ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-north-1.amazonaws.com/exp-track:latest
