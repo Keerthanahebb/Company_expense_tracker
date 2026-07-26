@@ -57,7 +57,8 @@ on:
 
 env:
   AWS_REGION: eu-north-1
-  ECR_REPOSITORY: expense-tracker
+  # ECR_REPOSITORY: expense-tracker
+  ECR_REPOSITORY: exp-track
 
 jobs:
 
