@@ -1,8 +1,9 @@
 import pandas as pd
 from sklearn.ensemble import IsolationForest
 from app.database import get_engine
-engine = get_engine()
+# engine = get_engine()
 def detect_department_anomalies():
+    engine = get_engine()
 
     query = """
     SELECT 
